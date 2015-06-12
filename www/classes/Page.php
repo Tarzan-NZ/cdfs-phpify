@@ -13,6 +13,7 @@ class Page {
 
 		// Get page data
 		$this->model->getPageInfo();
+
 	}
 
 	// Function to build the HTML
