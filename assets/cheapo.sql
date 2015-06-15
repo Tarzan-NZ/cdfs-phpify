@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2015 at 05:25 am
+-- Generation Time: Jun 15, 2015 at 05:22 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `Password` varchar(60) NOT NULL,
   `Privilege` enum('admin','moderator','user') NOT NULL,
   `CreationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `accounts`
 --
 
 INSERT INTO `accounts` (`ID`, `Username`, `Email`, `Password`, `Privilege`, `CreationDate`) VALUES
-(1, 'admin', 'admin@admin.com', 'admin', 'admin', '2015-06-12 02:47:00');
+(1, 'admin', 'admin@admin.com', 'admin', 'admin', '2015-06-12 02:47:00'),
+(2, 'orion', 'orion@gmail.com', '$2y$10$UsTtwh62kiIIm2Lop4JSyu6wS0wvKFQs1mF54wCUvYyPlEe5ipxzq', 'user', '2015-06-15 03:19:29');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-MODIFY `ID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pages`
 --
