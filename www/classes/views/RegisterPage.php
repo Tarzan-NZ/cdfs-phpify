@@ -8,14 +8,11 @@ class RegisterPage extends Page {
 	private $email;
 	private $emailError;
 	private $passwordError;
-	private $registerSuccess = false;
-
+	
 	public function contentHTML() {
-		if(!$this->registerSuccess) {
+		
 		include 'templates/registerform.php';
-		} else {
-		echo "Success";
-		}
+
 	}
 
 	public function __construct($model) {
@@ -70,7 +67,10 @@ class RegisterPage extends Page {
 		// If there are no errors, then create the account 
 		if ($this->userNameError == '' && $this->emailError == '' && $this->passwordError == '') {
 			$this->model->registerNewAccount($uName, $email, $pass);
-			$this->registerSuccess = true;
+
+			// Redirect the user if they succeed in creating an account
+			header('Location: index.php?page=account');
+
 		}
 
 

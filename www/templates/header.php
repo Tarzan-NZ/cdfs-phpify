@@ -49,8 +49,16 @@
            ?>
           <li class="has-dropdown"><a href="index.php?page=account"><?php echo $text; ?></a>
             <ul class="dropdown">
+            <?php
+              // If the user is not logged in
+              if (!isset($_SESSION['username'])) :
+              ?>
               <li><a href="index.php?page=register">Register</a></li>
               <li><a href="index.php?page=login">Login</a></li>
+              <?php else: ?>
+              <li><a href="index.php?page=logout">Logout</a></li>
+              <?php endif; ?>
+
             </ul>
           </li>
         </ul>
