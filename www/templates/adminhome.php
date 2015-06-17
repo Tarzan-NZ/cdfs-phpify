@@ -10,7 +10,7 @@
 
 
 				// Loop through the result and display all the usernames
-				while ( $row = $result->fetch_assoc() ) {
+				while( $row = $result->fetch_assoc() ) {
 					echo "<option>".$row['Username']."<option>";
 				}
 					
